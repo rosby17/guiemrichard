@@ -1,52 +1,65 @@
 @import 'tailwindcss';
 
 /* --------------------------------------------------------------------------
-   Design tokens — plateforme Guiem Richard
-   Registre savant : fond papier, encre bleu-nuit, bleu roi, ocre.
-   Les couleurs basculent en mode sombre via prefers-color-scheme.
+   Charte Guiem Richard — reprise de la palette Kadence du site d'origine.
+     blue        #003fb1   (vif, primaire / héros)
+     blue-bright #0274be   (liens, accents)
+     blue-deep   #084088   (sections sombres, pied de page)
+     amber       #f29b30   (boutons d'action)   hover #d89103
+     blue-pale   #bfd1ff   (aplats légers)
+     ink #070707 · texte #363636 · fonds #ffffff / #fafafa / #f2f2f2
    -------------------------------------------------------------------------- */
 :root {
-  --c-paper: #f7f6f2;
+  --c-bg: #ffffff;
+  --c-bg-2: #f5f7fc;
   --c-surface: #ffffff;
-  --c-surface-2: #f1efe8;
-  --c-ink: #161b2e;
-  --c-ink-soft: #4b5165;
-  --c-line: #ddd9ce;
-  --c-primary: #1b3a6b;
-  --c-primary-soft: #e7edf6;
-  --c-accent: #a9711b;
-  --c-accent-soft: #f4e8d4;
+  --c-ink: #0a1020;
+  --c-ink-soft: #4a5568;
+  --c-line: #e3e7f1;
+  --c-blue: #003fb1;
+  --c-blue-bright: #0274be;
+  --c-blue-deep: #084088;
+  --c-blue-pale: #e9f0ff;
+  --c-amber: #f29b30;
+  --c-amber-deep: #d89103;
+  --c-on-blue: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --c-paper: #0f121b;
-    --c-surface: #161a25;
-    --c-surface-2: #1d2231;
-    --c-ink: #e7e8ee;
-    --c-ink-soft: #9ba0b2;
-    --c-line: #2a2f3e;
-    --c-primary: #83abe1;
-    --c-primary-soft: #1a2335;
-    --c-accent: #d9a64c;
-    --c-accent-soft: #281f12;
+    --c-bg: #090e1a;
+    --c-bg-2: #0d1424;
+    --c-surface: #121a2d;
+    --c-ink: #eef2fb;
+    --c-ink-soft: #a2b2d1;
+    --c-line: #21304f;
+    --c-blue: #5b8def;
+    --c-blue-bright: #56b0e6;
+    --c-blue-deep: #0b2a5e;
+    --c-blue-pale: #14203c;
+    --c-amber: #f2a94a;
+    --c-amber-deep: #e0982f;
+    --c-on-blue: #ffffff;
   }
 }
 
 @theme inline {
-  --color-paper: var(--c-paper);
+  --color-bg: var(--c-bg);
+  --color-bg-2: var(--c-bg-2);
   --color-surface: var(--c-surface);
-  --color-surface-2: var(--c-surface-2);
   --color-ink: var(--c-ink);
   --color-ink-soft: var(--c-ink-soft);
   --color-line: var(--c-line);
-  --color-primary: var(--c-primary);
-  --color-primary-soft: var(--c-primary-soft);
-  --color-accent: var(--c-accent);
-  --color-accent-soft: var(--c-accent-soft);
+  --color-blue: var(--c-blue);
+  --color-blue-bright: var(--c-blue-bright);
+  --color-blue-deep: var(--c-blue-deep);
+  --color-blue-pale: var(--c-blue-pale);
+  --color-amber: var(--c-amber);
+  --color-amber-deep: var(--c-amber-deep);
+  --color-on-blue: var(--c-on-blue);
 
-  --font-display: 'Spectral', Georgia, 'Times New Roman', serif;
-  --font-sans: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Archivo', system-ui, sans-serif;
+  --font-sans: 'Manrope', system-ui, -apple-system, sans-serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', monospace;
 }
 
@@ -63,13 +76,13 @@ html {
 
 body {
   margin: 0;
-  background: var(--c-paper);
+  background: var(--c-bg);
   color: var(--c-ink);
   -webkit-font-smoothing: antialiased;
 }
 
 :focus-visible {
-  outline: 2px solid var(--c-primary);
+  outline: 2px solid var(--c-blue-bright);
   outline-offset: 3px;
-  border-radius: 2px;
+  border-radius: 3px;
 }

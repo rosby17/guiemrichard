@@ -14,21 +14,24 @@ export function Header() {
   const { t, locale, setLocale } = useLocale()
 
   return (
-    <header className="sticky top-0 z-20 border-b border-line bg-paper/85 backdrop-blur">
-      <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-3.5 sm:px-8">
-        <a
-          href="#top"
-          className="font-mono text-[0.8rem] font-medium uppercase tracking-[0.16em] text-ink"
-        >
-          Guiem&nbsp;Richard
+    <header className="sticky top-0 z-30 border-b border-line bg-bg/90 backdrop-blur">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3 sm:px-8">
+        <a href="#top" className="flex items-center" aria-label="Guiem Richard">
+          <img
+            src="/img/logo.png"
+            alt="Guiem Richard"
+            width={936}
+            height={406}
+            className="h-8 w-auto sm:h-9 dark:brightness-0 dark:invert"
+          />
         </a>
 
-        <nav className="hidden items-center gap-6 lg:flex">
+        <nav className="hidden items-center gap-7 lg:flex">
           {NAV.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="text-sm text-ink-soft transition-colors hover:text-ink"
+              className="text-sm font-medium text-ink-soft transition-colors hover:text-blue"
             >
               {t(item.key)}
             </a>
@@ -39,13 +42,13 @@ export function Header() {
           <button
             type="button"
             onClick={() => setLocale(locale === 'fr' ? 'en' : 'fr')}
-            className="font-mono text-xs uppercase tracking-wider text-ink-soft transition-colors hover:text-ink"
+            className="rounded-md border border-line px-2.5 py-1.5 font-mono text-xs font-medium uppercase tracking-wider text-ink-soft transition-colors hover:border-blue hover:text-blue"
           >
-            {t('lang.switch')}
+            {locale === 'fr' ? 'EN' : 'FR'}
           </button>
           <Link
             to="/cours"
-            className="rounded-md bg-primary px-3.5 py-2 text-sm font-medium text-white transition-opacity hover:opacity-90"
+            className="rounded-md bg-amber px-4 py-2 text-sm font-bold text-[#1a1205] shadow-sm transition-colors hover:bg-amber-deep"
           >
             {t('nav.courses')}
           </Link>
